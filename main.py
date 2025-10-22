@@ -16,7 +16,7 @@ def get_services() -> list[str]:
     return resp.json().get("data", [])
 
 @mcp.tool(name="get_operations", description="List operations by service")
-def get_operations(service: str, spanKind: str = None) -> List[dict]:
+def get_operations(service: str, spanKind: str = None) -> list[dict]:
     params = {"service": service}
     if spanKind:
         params["spanKind"] = spanKind
